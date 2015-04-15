@@ -135,9 +135,8 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/extras.php';
 
-// Composers
-require get_template_directory() . '/inc/plugins/composers.php';
-
+// Additional Declaring Glory functions
+require get_template_directory() . '/inc/dg-functions.php';
 
 // Options fallback
 
