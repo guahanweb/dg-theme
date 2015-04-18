@@ -1,0 +1,36 @@
+/*** FRONT PAGE ***/
+
+#secondary {
+    background-color: #f0eee4;
+    border-top: 2px solid #b0a892;
+}
+
+#secondary .secondary-header {
+    padding: 0 10px;
+}
+
+#secondary h1.header-title {
+    font-size: 26px;
+    font-weight: normal;
+    color: #877b5b;
+}
+
+#secondary .entry-feature {
+    display: inline-block;
+    width: 80px;
+}
+
+#secondary .title-holder {
+    display: inline-block;
+    width: 212px;
+    padding-left: 4px;
+}
+
+#secondary .entry-title {
+    font-size: 26px;
+    margin: 0;
+    color: #245e89;
+}
+
+
+/*** END FRONT PAGE ***/

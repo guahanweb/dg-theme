@@ -10,6 +10,11 @@ Template Name: Front Page
 
 get_header(); ?>
 <div class="container_12 site-cover">
+    <section id="main-banner">
+        <div class="wrapper">
+            <img src="<?php echo get_template_directory_uri() . '/images/dgbanner01.png'; ?>" alt="Declaring Glory" />
+        </div>
+    </section>
     <div id="primary" class="content-area grid_12">
         <main id="main" class="site-main" role="main">
             <?php the_post(); ?>
@@ -23,6 +28,9 @@ get_header(); ?>
 
     </div>
     <div id="secondary">
+        <header class="secondary-header">
+            <h1 class="header-title">Composers</h1>
+        </header>
         <main id="composers">
 <?php
 $tmp_query = $wp_query;
