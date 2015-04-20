@@ -7,6 +7,25 @@ if (!function_exists('declaringglory_setup_theme')) {
 }
 add_action('after_setup_theme', 'declaringglory_setup_theme');
 
+// Front Page Sidebar
+if (!function_exists('declaringglory_setup_sidebars')) {
+    function declaringglory_setup_sidebars() {
+        $args = array(
+            'name' => __('Front Page Sidebar'),
+            'id' => 'declaringglory-sidebar-front',
+            'description' => 'Front page sidebar',
+            'class' => '',
+            'before_widget' => '<aside id="%1$s-2" class="widget %2$s">',
+            'after_widget' => '</aside>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>'
+        );
+
+        register_sidebar($args);
+    }
+}
+add_action('widgets_init', 'declaringglory_setup_sidebars');
+
 // Composers
 require get_template_directory() . '/inc/plugins/composers.php';
 

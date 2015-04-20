@@ -15,7 +15,7 @@ get_header(); ?>
             <img src="<?php echo get_template_directory_uri() . '/images/dgbanner01.png'; ?>" alt="Declaring Glory" />
         </div>
     </section>
-    <div id="primary" class="content-area grid_12">
+    <div id="primary" class="content-area grid_8">
         <main id="main" class="site-main" role="main">
             <?php the_post(); ?>
             <header class="entry-header">
@@ -24,14 +24,12 @@ get_header(); ?>
             <?php the_content(); ?>
         </main><!-- #main -->
     </div><!-- #primary -->
-    <div class="grid-holder">
-
-    </div>
-    <div id="secondary">
+    <?php get_sidebar('front'); ?>
+    <div id="composers" class="grid_12">
         <header class="secondary-header">
             <h1 class="header-title">Composers</h1>
         </header>
-        <main id="composers">
+        <main id="composer-content">
 <?php
 $tmp_query = $wp_query;
 $wp_query = new WP_Query(array('post_type' => 'composer'));
