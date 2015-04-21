@@ -49,7 +49,6 @@ if (!function_exists('declaringglory_composers_table_head')) {
             if ($k == 'title') {
                 $columns['portrait'] = '<div class="composer-header composer-portrait">' . __('Portrait') . '</div>';
                 $columns[$k] = '<div class="composer-header composer-name">' . __('Name') . '</div>';
-                $columns['about'] = '<div class="composer-header composer-about">' . __('About') . '</div>';
             } elseif ($k == 'date') {
                 $columns['author'] = '<div class="composer-header composer-added">' . __('Added By') . '</div>';
                 $columns[$k] = $v;
@@ -66,8 +65,6 @@ if (!function_exists('declaringglory_composers_table_content')) {
     function declaringglory_composers_table_content($column_name, $post_id) {
         if ($column_name == 'portrait') {
             echo get_the_post_thumbnail($post_id, 'composer-thumb-small');
-        } elseif ($column_name == 'about') {
-            echo get_the_excerpt($post_id);
         }
     }
 }
