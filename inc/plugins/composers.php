@@ -22,7 +22,7 @@ if (!function_exists('declaringglory_create_composers')) {
                 'not_found_in_trash' => __('Not Found in Trash', 'declaringglory')
             ),
 
-            'supports' => array('title', 'editor', 'thumbnail'),
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
             'taxonomies' => array('composers'),
             'rewrite' => array('slug' => $slug),
             'hierarchical' => false,
