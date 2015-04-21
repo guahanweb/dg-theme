@@ -10,5 +10,4 @@
         <?php if ( ! dynamic_sidebar( 'declaringglory-sidebar-front' ) ) : ?>
 
         <?php endif; // end sidebar widget area ?>
-        <?php include (TEMPLATEPATH . '/sponsors.php'); ?>
     </div><!-- #secondary -->

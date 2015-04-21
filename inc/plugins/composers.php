@@ -67,7 +67,7 @@ if (!function_exists('declaringglory_composers_table_content')) {
         if ($column_name == 'portrait') {
             echo get_the_post_thumbnail($post_id, 'composer-thumb-small');
         } elseif ($column_name == 'about') {
-            echo get_the_content($post_id);
+            echo get_the_excerpt($post_id);
         }
     }
 }
