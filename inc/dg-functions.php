@@ -2,6 +2,8 @@
 // Main Theme Setup
 if (!function_exists('declaringglory_setup_theme')) {
     function declaringglory_setup_theme() {
+        add_image_size('author-thumb', 120, 120, true);
+        add_image_size('author-thumb-small', 80, 80, true);
         add_image_size('composer-thumb', 120, 120, true);
         add_image_size('composer-thumb-small', 80, 80, true);
     }
@@ -44,3 +46,29 @@ add_action('admin_enqueue_scripts', 'declaringglory_enqueue_admin_scripts');
 
 // Plugins: Composers
 require get_template_directory() . '/inc/plugins/composers.php';
+
+// Connections
+if (function_exists('p2p_register_connection_type')) {
+    if (!function_exists('declaringglory_connection_types')) {
+        function declaringglory_connection_types() {
+            // Writers
+            p2p_register_connection_type(array(
+                'name' => 'author',
+                'from' => 'post',
+                'to' => 'user',
+                'cardinality' => 'one-to-many',
+                'title' => array('from' => 'Written by', 'to' => 'Wrote')
+            ));
+
+            // Composers
+            p2p_register_connection_type(array(
+                'name' => 'composer',
+                'from' => 'post',
+                'to' => 'composer',
+                'cardinality' => 'one-to-many',
+                'title' => array('from' => 'Composed by', 'to' => 'Composed')
+            ));
+        }
+    }
+    add_action('p2p_init', 'declaringglory_connection_types');
+}
