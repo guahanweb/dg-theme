@@ -56,7 +56,7 @@ if (function_exists('p2p_register_connection_type')) {
                 'name' => 'author',
                 'from' => 'post',
                 'to' => 'user',
-                'cardinality' => 'one-to-many',
+                'cardinality' => 'many-to-many',
                 'title' => array('from' => 'Written by', 'to' => 'Wrote')
             ));
 
@@ -65,7 +65,7 @@ if (function_exists('p2p_register_connection_type')) {
                 'name' => 'composer',
                 'from' => 'post',
                 'to' => 'composer',
-                'cardinality' => 'one-to-many',
+                'cardinality' => 'many-to-many',
                 'title' => array('from' => 'Composed by', 'to' => 'Composed')
             ));
         }
