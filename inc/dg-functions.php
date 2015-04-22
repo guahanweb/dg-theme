@@ -45,7 +45,8 @@ if (!function_exists('declaringglory_enqueue_admin_scripts')) {
 add_action('admin_enqueue_scripts', 'declaringglory_enqueue_admin_scripts');
 
 // Plugins: Composers
-require get_template_directory() . '/inc/plugins/composers.php';
+require get_template_directory() . '/inc/plugins/songs/songs.php';
+require get_template_directory() . '/inc/plugins/composers/composers.php';
 
 // Connections
 if (function_exists('p2p_register_connection_type')) {
@@ -53,8 +54,8 @@ if (function_exists('p2p_register_connection_type')) {
         function declaringglory_connection_types() {
             // Writers
             p2p_register_connection_type(array(
-                'name' => 'author',
-                'from' => 'post',
+                'name' => 'writer',
+                'from' => 'song',
                 'to' => 'user',
                 'cardinality' => 'many-to-many',
                 'title' => array('from' => 'Written by', 'to' => 'Wrote')
@@ -63,7 +64,7 @@ if (function_exists('p2p_register_connection_type')) {
             // Composers
             p2p_register_connection_type(array(
                 'name' => 'composer',
-                'from' => 'post',
+                'from' => 'song',
                 'to' => 'composer',
                 'cardinality' => 'many-to-many',
                 'title' => array('from' => 'Composed by', 'to' => 'Composed')

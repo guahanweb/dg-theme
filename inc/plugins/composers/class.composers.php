@@ -1,6 +1,19 @@
 <?php
-if (!function_exists('declaringglory_create_composers')) {
-    function declaringglory_create_composers() {
+class GW_Composers {
+    private static $initialized = false;
+
+    public static function init() {
+        if (!self::$initialized) {
+            self::init_hooks();
+            self::registerPostType();
+        }
+    }
+
+    private static function init_hooks() {
+        self::$initialized = true;
+    }
+
+    private static function registerPostType() {
         $slug = get_theme_mod('event_permalink');
         $slug = empty($slug) ? 'composer' : $slug;
 
@@ -40,32 +53,3 @@ if (!function_exists('declaringglory_create_composers')) {
         ));
     }
 }
-add_action('init', 'declaringglory_create_composers', 0);
-
-if (!function_exists('declaringglory_composers_table_head')) {
-    function declaringglory_composers_table_head($defaults) {
-        $columns = array();
-        foreach ($defaults as $k => $v) {
-            if ($k == 'title') {
-                $columns['portrait'] = '<div class="composer-header composer-portrait">' . __('Portrait') . '</div>';
-                $columns[$k] = '<div class="composer-header composer-name">' . __('Name') . '</div>';
-            } elseif ($k == 'date') {
-                $columns['author'] = '<div class="composer-header composer-added">' . __('Added By') . '</div>';
-                $columns[$k] = $v;
-            } else {
-                $columns[$k] = $v;
-            }
-        }
-        return $columns;
-    }
-}
-add_filter('manage_composer_posts_columns', 'declaringglory_composers_table_head');
-
-if (!function_exists('declaringglory_composers_table_content')) {
-    function declaringglory_composers_table_content($column_name, $post_id) {
-        if ($column_name == 'portrait') {
-            echo get_the_post_thumbnail($post_id, 'composer-thumb-small');
-        }
-    }
-}
-add_action('manage_composer_posts_custom_column', 'declaringglory_composers_table_content', 10, 2);
