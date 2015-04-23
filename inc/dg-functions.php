@@ -44,7 +44,7 @@ if (!function_exists('declaringglory_enqueue_admin_scripts')) {
 }
 add_action('admin_enqueue_scripts', 'declaringglory_enqueue_admin_scripts');
 
-// Plugins: Composers
+// Plugins
 require get_template_directory() . '/inc/plugins/songs/songs.php';
 require get_template_directory() . '/inc/plugins/composers/composers.php';
 

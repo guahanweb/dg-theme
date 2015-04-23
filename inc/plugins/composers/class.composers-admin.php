@@ -11,8 +11,8 @@ class GW_ComposersAdmin {
     private static function init_hooks() {
         self::$initialized = true;
 
-        add_filter('manage_song_posts_columns', array('GW_ComposersAdmin', 'setupTableHeadings'));
-        add_action('manage_song_posts_custom_column', array('GW_ComposersAdmin', 'manageCustomColumns'), 10, 2);
+        add_filter('manage_composer_posts_columns', array('GW_ComposersAdmin', 'setupTableHeadings'));
+        add_action('manage_composer_posts_custom_column', array('GW_ComposersAdmin', 'manageCustomColumns'), 10, 2);
     }
 
     public static function setupTableHeadings($defaults) {
