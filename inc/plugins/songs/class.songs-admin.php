@@ -14,6 +14,7 @@ class GW_SongsAdmin {
 
         add_filter('manage_song_posts_columns', array('GW_SongsAdmin', 'setupTableHeadings'));
         add_action('manage_song_posts_custom_column', array('GW_SongsAdmin', 'manageCustomColumns'), 10, 2);
+        add_action('save_post', array('GW_SongsAdmin', 'saveMetaData'));
     }
 
     public static function setupTableHeadings($defaults) {
@@ -59,6 +60,38 @@ class GW_SongsAdmin {
             }
             wp_reset_postdata();
             echo (count($names) > 0) ? implode(', ', $names) : '<p class="disabled">none</p>';
+        }
+    }
+
+    public static function registerMetaBoxes() {
+        add_meta_box('declaringglory_songs_details', __('Song Details'), array('GW_SongsAdmin', 'renderDetailsMetaBox'), 'song', 'normal', 'default');
+    }
+
+    public static function renderDetailsMetaBox($post) {
+        // Render nonce
+        wp_nonce_field(basename(__FILE__), 'dgsongs_nonce');
+
+        // Render textarea for text
+        $text = get_post_meta($post->ID, 'song_text', true);
+        echo '<p>';
+        echo '<label class="declaringglory-meta-label" for="song_details_text">';
+        _e('Text');
+        echo '</label>';
+        printf('<textarea name="song_details_text" id="song_details_text" class="widefat" rows="12">%s</textarea>', $text);
+        echo '</p>';
+    }
+
+    public static function saveMetaData($post_id) {
+        $is_autosave = wp_is_post_autosave($post_id);
+        $is_revision = wp_is_post_revision($post_id);
+        $is_valid_nonce = (isset($_POST['dgsongs_nonce']) && wp_verify_nonce($_POST['dgsongs_nonce'], basename(__FILE__)));
+
+        if ($is_autosave || $is_revision || !$is_valid_nonce) {
+            return;
+        }
+
+        if (isset($_POST['song_details_text'])) {
+            update_post_meta($post_id, 'song_text', $_POST['song_details_text']);
         }
     }
 }
