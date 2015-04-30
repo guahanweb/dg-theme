@@ -1,38 +1,61 @@
 /*** FRONT PAGE ***/
 
-#composers {
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom: 1;
+}
+
+#artists {
     background-color: #f0eee4;
     border-top: 2px solid #b0a892;
-    width: 960px;
-    margin: 0;
+    clear: both;
 }
 
-#composers .secondary-header {
-    padding: 0 10px;
+#artists .secondary-header {
+    padding: 10px 4px 0;
 }
 
-#composers h1.header-title {
+#artists h1.header-title {
     font-size: 26px;
     font-weight: normal;
     color: #877b5b;
 }
 
-#composers .entry-feature {
+#artists .entry-feature {
     display: inline-block;
     width: 80px;
 }
 
-#composers .title-holder {
+#artists .composer {
+    width: 49%;
     display: inline-block;
-    width: 212px;
+    box-sizing: border-box;
+    padding: 0 4px;
+}
+
+#artists .title-holder {
+    display: inline-block;
+    max-width: 208px;
     padding-left: 4px;
 }
 
-#composers .entry-title {
+#artists .entry-title {
     font-size: 26px;
     margin: 0;
     color: #245e89;
 }
 
+#author {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
 
 /*** END FRONT PAGE ***/

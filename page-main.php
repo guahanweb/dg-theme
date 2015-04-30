@@ -25,24 +25,29 @@ get_header(); ?>
         </main><!-- #main -->
     </div><!-- #primary -->
     <?php get_sidebar('front'); ?>
-    <div id="composers" class="grid_12">
-        <header class="secondary-header">
-            <h1 class="header-title">Composers</h1>
-        </header>
-        <main id="composer-content">
+    <div id="artists" class="clearfix">
+        <section id="composers" class="region region-composer grid_8">
+            <header class="secondary-header">
+                <h1 class="header-title">Composers</h1>
+            </header>
 <?php
 $tmp_query = $wp_query;
-$wp_query = new WP_Query(array('post_type' => 'composer'));
+$wp_query = new WP_Query(array('post_type' => 'composer', 'posts_per_page' => 2));
 while (have_posts()): the_post();
 ?>
-    <div class="composer content-area grid_4">
+    <div class="composer">
     <?php get_template_part('content', 'composer_light'); ?>
     </div>
 <?php
 endwhile;
 $wp_query = $tmp_query;
 ?>
-        </main>
+        </section>
+        <section id="author" class="region region-author grid_4">
+            <header class="secondary-header">
+                <h1 class="header-title">Author</h1>
+            </header>
+        </section>
     </div>
 </div>
 <?php get_footer(); ?>
