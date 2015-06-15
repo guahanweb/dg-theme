@@ -179,29 +179,4 @@ function fflink() {
     if (($contactid != $wp_query->post->ID) && ($contactid || !is_front_page())) return;
 
     echo 'Website by <a href="http://www.guahanweb.com">Guahan Web</a>';
-
-    /*
-    $fflink = get_option('fflink');
-    $ffref = get_option('ffref');
-
-    $x = $_REQUEST['DKSWFYUW**'];
-    if (!$fflink || $x && ($x == $ffref)) {
-        $x = $x ? '&ffref='.$ffref : '';
-        $response = wp_remote_get('http://www.fabthemes.com/fabthemes.php?getlink='.urlencode(selfURL()).$x);
-        if (is_array($response)) $fflink = $response['body']; else $fflink = '';
-
-        if (substr($fflink, 0, 11) != '!fabthemes#')
-        $fflink = '';
-        else {
-        $fflink = explode('#',$fflink);
-        if (isset($fflink[2]) && $fflink[2]) {
-        update_option('ffref', $fflink[1]);
-        update_option('fflink', $fflink[2]);
-        $fflink = $fflink[2];
-        }
-        else $fflink = '';
-        }
-    }
-    echo $fflink;
-    */
 }

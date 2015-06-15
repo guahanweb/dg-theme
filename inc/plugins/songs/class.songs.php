@@ -75,7 +75,10 @@ class GW_Songs {
                 ),
                 'show_ui' => true,
                 'show_tagcloud' => false,
-                'hierarchical' => true
+                'hierarchical' => true,
+                'rewrite' => array(
+                    'slug' => 'songs'
+                )
             )
         );
     }

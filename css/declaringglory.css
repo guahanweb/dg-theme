@@ -81,3 +81,7 @@
 }
 
 /*** END FRONT PAGE ***/
+
+article.page-top {
+    padding: 0 10px;
+}
