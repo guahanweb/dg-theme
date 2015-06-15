@@ -20,7 +20,7 @@
 }
 
 #artists .secondary-header {
-    padding: 10px 4px 0;
+    padding: 10px 8px 0;
 }
 
 #artists h1.header-title {
@@ -41,21 +41,37 @@
     padding: 0 8px;
 }
 
-#artists .title-holder {
-    display: inline-block;
-    max-width: 208px;
-    padding-left: 4px;
+#artists .composer header, #author .author header {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
-#artists .entry-title {
-    font-size: 26px;
-    margin: 0;
-    color: #245e89;
+#artists .composer header h2, #author .author header h2 {
+    font-size: 14px;
+    text-align: right;
+    padding: 4px;
+}
+
+#artists .composer .bio, #author .author .bio {
+    padding: 5px;
+}
+
+#artists .composer .bio .portrait {
+    float: left;
+    margin: 0 8px 4px 0;
 }
 
 #author {
     padding-left: 20px;
     box-sizing: border-box;
+}
+
+#author .secondary-header {
+    padding-left: 0;
+}
+
+#author .author header h2 {
+    text-align: left;
 }
 
 /*** END FRONT PAGE ***/

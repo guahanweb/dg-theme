@@ -7,14 +7,12 @@
 ?>
 <article id="post-<?php the_ID(); ?>">
     <header class="entry-header">
-        <div class="title-holder">
-            <h2 class="secondary"><?php the_title(); ?></h2>
-        </div>
+        <h2 class="secondary"><?php the_title(); ?></h2>
     </header>
     <main>
         <div class="bio">
             <div class="portrait"><?php the_post_thumbnail('composer-thumb-small'); ?></div>
-            <p><?php the_content(); ?></p>
+            <p><?php echo get_the_content(); ?></p>
         </div>
     </main>
 </article>
