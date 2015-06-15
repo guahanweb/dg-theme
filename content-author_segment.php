@@ -4,17 +4,17 @@
  * @subpackage DeclaringGlory
  * @since 1.0
  */
+$data = get_userdata(1);
 ?>
-<article id="post-<?php the_ID(); ?>">
+<article id="author-segment">
     <header class="entry-header">
         <div class="title-holder">
-            <h2 class="secondary"><?php the_title(); ?></h2>
+            <h2 class="secondary"><?php printf('%s %s', $data->first_name, $data->last_name); ?></h2>
         </div>
     </header>
     <main>
         <div class="bio">
-            <div class="portrait"><?php the_post_thumbnail('composer-thumb-small'); ?></div>
-            <p><?php the_content(); ?></p>
+            <p>Info here...</p>
         </div>
     </main>
 </article>

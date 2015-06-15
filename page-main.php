@@ -45,8 +45,11 @@ $wp_query = $tmp_query;
         </section>
         <section id="author" class="region region-author grid_4">
             <header class="secondary-header">
-                <h1 class="header-title">Author</h1>
+                <h1 class="header-title">About the Author</h1>
             </header>
+            <div class="author">
+            <?php get_template_part('content', 'author_segment'); ?>
+            </div>
         </section>
     </div>
 </div>
