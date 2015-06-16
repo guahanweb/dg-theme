@@ -51,10 +51,6 @@ wp_reset_postdata();
 
     <div class="entry-content">
         <?php the_content(); ?>
-        <div class="song-copyright">
-            <p><?php printf(__('&copy; %s Declaring Glory &#8212; all rights reserved'), get_the_time('Y')); ?></p>
-        </div>
-
 
         <?php
             wp_link_pages( array(

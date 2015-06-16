@@ -89,10 +89,23 @@ article.page-top {
 .entry-header > .composition-meta {
     border-top: 1px solid #ccc;
     margin-top: -15px;
-    padding-bottom: 10px;
+    padding: 5px 0 10px 20px;
 }
 
 .composition-meta h2 {
     font-weight: normal;
     font-size: 16px;
+}
+
+.entry-content blockquote {
+    line-height: 1.5em;
+    font-size: 1.2em;
+    padding-left: 10px;
+    border-left: 5px solid #eee;
+}
+
+.entry-content .song-copyright {
+    font-size: 0.9em;
+    color: #aaa;
+    margin: -20px 0 15px 25px;
 }

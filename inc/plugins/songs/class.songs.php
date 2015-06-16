@@ -87,7 +87,8 @@ class GW_Songs {
         if ('song' === get_post_type()) {
             global $post;
             $text = get_post_meta($post->ID, 'song_text', true);
-            $content = str_replace('[insert_text]', '<blockquote class="song-text fulltext">' . $text . '</blockquote>', $content);
+            $copyright = sprintf('<div class="song-copyright"><p>&copy; %s Declaring Glory &#8211; all rights reserved</p></div>', get_the_time('Y'));
+            $content = str_replace('[insert_text]', '<blockquote class="song-text fulltext">' . $text . '</blockquote>' . $copyright, $content);
         }
         return $content;
     }
