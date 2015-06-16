@@ -14,7 +14,7 @@ $tax = array(
 );
 
 $terms = get_terms($tax, array(
-    'hide_empty' => false,
+    'hide_empty' => true,
     'orderby' => 'id'
 ));
 get_header(); ?>
