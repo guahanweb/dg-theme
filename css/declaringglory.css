@@ -85,3 +85,14 @@
 article.page-top {
     padding: 0 10px;
 }
+
+.entry-header > .composition-meta {
+    border-top: 1px solid #ccc;
+    margin-top: -15px;
+    padding-bottom: 10px;
+}
+
+.composition-meta h2 {
+    font-weight: normal;
+    font-size: 16px;
+}
