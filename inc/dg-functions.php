@@ -48,6 +48,11 @@ add_action('admin_enqueue_scripts', 'declaringglory_enqueue_admin_scripts');
 require get_template_directory() . '/inc/plugins/songs/songs.php';
 require get_template_directory() . '/inc/plugins/composers/composers.php';
 
+// Widgets
+require get_template_directory() . '/inc/widgets/recent_songs.php';
+require get_template_directory() . '/inc/widgets/recent_devos.php';
+require get_template_directory() . '/inc/widgets/song_types.php';
+
 // Connections
 if (function_exists('p2p_register_connection_type')) {
     if (!function_exists('declaringglory_connection_types')) {
