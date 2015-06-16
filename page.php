@@ -10,13 +10,6 @@
  * @package web2feel
  */
 
-$terms = get_terms('song_type');
-echo '<pre>' . print_r($terms, TRUE);
-foreach($terms as $term) {
-    var_dump(get_term_link($term));
-}
-echo '</pre>';
-
 get_header(); ?>
 <div class="container_12 site-cover">
     <div id="primary" class="content-area grid_8">
