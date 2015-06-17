@@ -1,6 +1,22 @@
 <?php
-if (!function_exists('declaringglory_create_composers')) {
-    function declaringglory_create_composers() {
+class GW_Composers {
+    private static $initialized = false;
+
+    public static function init() {
+        if (!self::$initialized) {
+            self::init_hooks();
+            self::registerPostType();
+        }
+    }
+
+    private static function init_hooks() {
+        self::$initialized = true;
+    }
+
+    private static function registerPostType() {
+        $slug = get_theme_mod('event_permalink');
+        $slug = empty($slug) ? 'composer' : $slug;
+
         register_post_type('composer', array(
             'label' => __('composers', 'declaringglory'),
             'description' => __('Composers with whom I have worked', 'declaringglory'),
@@ -19,8 +35,9 @@ if (!function_exists('declaringglory_create_composers')) {
                 'not_found_in_trash' => __('Not Found in Trash', 'declaringglory')
             ),
 
-            'supports' => array('title', 'editor', 'thumbnail'),
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
             'taxonomies' => array('composers'),
+            'rewrite' => array('slug' => $slug),
             'hierarchical' => false,
             'public' => true,
             'show_ui' => true,
@@ -36,5 +53,3 @@ if (!function_exists('declaringglory_create_composers')) {
         ));
     }
 }
-add_action('init', 'declaringglory_create_composers', 0);
-?>

@@ -1,0 +1,111 @@
+/*** FRONT PAGE ***/
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom: 1;
+}
+
+#artists {
+    background-color: #f0eee4;
+    border-top: 2px solid #b0a892;
+    clear: both;
+}
+
+#artists .secondary-header {
+    padding: 10px 8px 0;
+}
+
+#artists h1.header-title {
+    font-size: 26px;
+    font-weight: normal;
+    color: #877b5b;
+}
+
+#artists .entry-feature {
+    display: inline-block;
+    width: 80px;
+}
+
+#artists .composer {
+    width: 49%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 8px;
+}
+
+#artists .composer header, #author .author header {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#artists .composer header h2, #author .author header h2 {
+    font-size: 14px;
+    text-align: right;
+    padding: 4px;
+}
+
+#artists .composer .bio, #author .author .bio {
+    padding: 5px;
+}
+
+#artists .composer .bio .portrait {
+    float: left;
+    margin-right: 8px;
+    padding-top: 4px;
+}
+
+#artists .composer .bio .portrait img {
+    display: block;
+    border: 1px solid #fff;
+}
+
+#author {
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+#author .secondary-header {
+    padding-left: 0;
+}
+
+#author .author header h2 {
+    text-align: left;
+}
+
+/*** END FRONT PAGE ***/
+
+article.page-top {
+    padding: 0 10px;
+}
+
+.entry-header > .composition-meta {
+    border-top: 1px solid #ccc;
+    margin-top: -15px;
+    padding: 5px 0 10px 20px;
+}
+
+.composition-meta h2 {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.entry-content blockquote {
+    line-height: 1.5em;
+    font-size: 1.2em;
+    padding-left: 10px;
+    border-left: 5px solid #eee;
+}
+
+.entry-content .song-copyright {
+    font-size: 0.9em;
+    color: #aaa;
+    margin: -20px 0 15px 25px;
+}

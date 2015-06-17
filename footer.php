@@ -8,15 +8,15 @@
  */
 ?>
 
-	</div><!-- #content -->
-</div>	
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			Copyright &copy; <?php echo date('Y');?> <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php bloginfo('description'); ?> <br>
-			<?php fflink(); ?> | <a href="http://fabthemes.com/<?php echo FT_scope::tool()->themeName ?>/" ><?php echo FT_scope::tool()->themeName ?> WordPress Theme</a>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-	
+    </div><!-- #content -->
+</div>
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="site-info">
+            Copyright &copy; <?php echo date('Y');?> <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php bloginfo('description'); ?> <br>
+            <?php fflink(); ?>
+        </div><!-- .site-info -->
+    </footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

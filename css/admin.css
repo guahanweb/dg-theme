@@ -1,0 +1,7 @@
+th.column-portrait, .column-portrait > .composer-portrait {
+    width: 90px;
+}
+
+.composer-about {
+    width: 100%;
+}
