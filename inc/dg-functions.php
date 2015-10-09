@@ -94,8 +94,8 @@ EOF;
 
             printf($tags,
                 post_permalink($post->ID),
-                $post->title,
-                $post->content,
+                $post->post_title,
+                $post->post_excerpt,
                 'http://www.declaringglory.com/wp-content/uploads/2015/06/Logo-very-small.jpg'
             );
         }
