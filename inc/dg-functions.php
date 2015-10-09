@@ -82,7 +82,23 @@ if (function_exists('p2p_register_connection_type')) {
 // Set up FB integration
 if (!function_exists('declaringglory_setup_facebook')) {
     function declaringglory_setup_facebook() {
+        if (is_single()) {
+            global $post;
+            $tags = <<<EOF
+<meta property="og:url" content="%s" />
+<meta property="og:type" content="music.song" />
+<meta property="og:title" content="%s" />
+<meta property="og:description" content="%s" />
+<meta property="og:image" content="%s" />
+EOF;
 
+            printf($tags,
+                post_permalink($post->ID),
+                $post->the_title,
+                $post->the_excerpt,
+                'http://www.declaringglory.com/wp-content/uploads/2015/06/Logo-very-small.jpg'
+            );
+        }
     }
 }
-//add_action('wp_head', 'declaringglory_setup_facebook');
+add_action('wp_head', 'declaringglory_setup_facebook');
