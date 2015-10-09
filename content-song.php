@@ -51,7 +51,7 @@ wp_reset_postdata();
 
     <div class="entry-content">
         <div class="fb-share-button"
-            data-href="http://www.your-domain.com/your-page.html"
+            data-href="<?php get_permalink(); ?>"
             data-layout="button_count">
         </div>
         <?php the_content(); ?>
