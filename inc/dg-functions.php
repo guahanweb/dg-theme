@@ -82,8 +82,7 @@ if (function_exists('p2p_register_connection_type')) {
 // Set up FB integration
 if (!function_exists('declaringglory_setup_facebook')) {
     function declaringglory_setup_facebook() {
-        global $post;
-        echo "<!-- SLUG: " . $post->post_name . " -->\n";
+
     }
 }
-add_action('wp_head', 'declaringglory_setup_facebook');
+//add_action('wp_head', 'declaringglory_setup_facebook');
