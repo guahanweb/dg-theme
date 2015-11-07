@@ -18,6 +18,7 @@ $term  = get_term_by('slug', $value, $wp_query->query_vars['taxonomy']);
                 <h1 class="page-title"><?php printf( __( 'List of %s', 'declaringglory' ), '<span>' . $term->name . '</span>' ); ?></h1>
             </header><!-- .page-header -->
             <?php if (have_posts()): while(have_posts()): the_post(); ?>
+                <pre>bla</pre>
                 <?php get_template_part('mini', 'song'); ?>
             <?php endwhile; else: ?>
                 <p>Nothing here</p>
