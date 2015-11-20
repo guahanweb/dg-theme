@@ -48,10 +48,11 @@ class GW_ComposersAdmin {
         }
 
         $hidden = get_post_meta($post_id, 'composer_hidden', true);
-        if (isset($_POST['composer_hidden']) && !$hidden) {
-            add_post_meta($post_id, 'composer_hidden', '1');
-        } elseif ($hidden) {
-            delete_post_meta($post_id, 'composer_hidden');
+        $new_value = isset($_POST['composer_hidden']) ? '1' : '0';
+        if (empty($hidden)) {
+            add_post_meta($post_id, 'composer_hidden', $new_value);
+        } else {
+            update_post_meta($post_id, 'composer_hidden', $new_value);
         }
     }
 
