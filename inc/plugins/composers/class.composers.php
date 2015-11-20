@@ -49,7 +49,10 @@ class GW_Composers {
             'has_archive' => true,
             'exclude_from_search' => false,
             'publicly_queryable' => true,
-            'capability_type' => 'post'
+            'capability_type' => 'post',
+
+            // Meta box
+            'register_meta_box_cb' => array('GW_ComposersAdmin', 'registerMetaBoxes')
         ));
     }
 }

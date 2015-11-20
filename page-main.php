@@ -32,7 +32,14 @@ get_header(); ?>
             </header>
 <?php
 $tmp_query = $wp_query;
-$wp_query = new WP_Query(array('post_type' => 'composer', 'posts_per_page' => 2));
+$wp_query = new WP_Query(array(
+    'post_type' => 'composer',
+    'posts_per_page' => 2,
+    'orderby' => 'rand',
+
+    'meta_key' => 'composer_hidden',
+    'meta_value' => ''
+));
 while (have_posts()): the_post();
 ?>
     <div class="composer">
