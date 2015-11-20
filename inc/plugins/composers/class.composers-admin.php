@@ -47,8 +47,12 @@ class GW_ComposersAdmin {
             return;
         }
 
-        $hidden = !isset($_POST['composer_hidden']) || empty($_POST['composer_hidden']) ? '' : '1';
-        update_post_meta($post_id, 'composer_hidden', isset($_POST['composer_hidden']));
+        $hidden = get_post_meta($post_id, 'composer_hidden', true);
+        if (isset($_POST['composer_hidden']) && !$hidden) {
+            add_post_meta($post_id, 'composer_hidden', '1');
+        } elseif ($hidden) {
+            delete_post_meta($post_id, 'composer_hidden');
+        }
     }
 
     public static function registerMetaBoxes() {
@@ -61,7 +65,6 @@ class GW_ComposersAdmin {
 
         // Render textarea for text
         $hidden = get_post_meta($post->ID, 'composer_hidden', true);
-        $hidden = empty($hidden) ? false : true;
         echo '<p>';
         echo '<label class="declaringglory-meta-label" for="composer_hidden">';
         printf('<input type="checkbox" name="composer_hidden" id="composer_hidden" checked="%s" value="1">',
