@@ -65,7 +65,6 @@ class GW_ComposersAdmin {
         echo '<p>';
         echo '<label class="declaringglory-meta-label" for="composer_hidden">';
         printf('<input type="checkbox" name="composer_hidden" id="composer_hidden" checked="%s" value="1">',
-            $text,
             $hidden ? 'checked' : ''
         );
         _e('Hide Composer in Listings');
