@@ -64,12 +64,12 @@ class GW_ComposersAdmin {
         $hidden = empty($hidden) ? false : true;
         echo '<p>';
         echo '<label class="declaringglory-meta-label" for="composer_hidden">';
-        _e('Hide Composer in Listings');
-        echo '</label>';
         printf('<input type="checkbox" name="composer_hidden" id="composer_hidden" checked="%s" value="1">',
             $text,
             $hidden ? 'checked' : ''
         );
+        _e('Hide Composer in Listings');
+        echo '</label>';
         echo '</p>';
     }
 }
