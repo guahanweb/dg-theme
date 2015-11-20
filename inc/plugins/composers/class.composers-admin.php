@@ -60,12 +60,13 @@ class GW_ComposersAdmin {
         wp_nonce_field(basename(__FILE__), 'dcomposers_nonce');
 
         // Render textarea for text
-        $hidden = empty(get_post_meta($post->ID, 'composer_hidden', true)) ? false : true;
+        $hidden = get_post_meta($post->ID, 'composer_hidden', true);
+        $hidden = empty($hidden) ? false : true;
         echo '<p>';
         echo '<label class="declaringglory-meta-label" for="composer_hidden">';
         _e('Hide Composer in Listings');
         echo '</label>';
-        printf('<input name="composer_hidden" id="composer_hidden" checked="%s" value="1">',
+        printf('<input type="checkbox" name="composer_hidden" id="composer_hidden" checked="%s" value="1">',
             $text,
             $hidden ? 'checked' : ''
         );
