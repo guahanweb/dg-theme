@@ -47,7 +47,7 @@ class GW_ComposersAdmin {
             return;
         }
 
-        $hidden = !isset($_POST['composer_hidden']) || empty($_POST['composer_hidden']) ? '', '1';
+        $hidden = !isset($_POST['composer_hidden']) || empty($_POST['composer_hidden']) ? '' : '1';
         update_post_meta($post_id, 'composer_hidden', isset($_POST['composer_hidden']));
     }
 
